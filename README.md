@@ -9,7 +9,7 @@ If the text is not a palindrome, the UI lines should be highlighted in red.
 <table>
   <tr>
   <td> 
-<img src = "https://github.com/Bucerella/PalindromeWithFlutter/blob/master/ss.jpg" width = 400>
+<img src = "https://github.com/Bucerella/PalindromeWithFlutter/blob/main/ss.jpg" width = 400>
   </td>
   </tr>
 </table>
