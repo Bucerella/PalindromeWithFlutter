@@ -25,10 +25,6 @@ class PalindromeListPage extends StatelessWidget {
       body: Consumer<PalindromeProvider>(
         builder: (context, provider, _) {
           if (provider.isLoading) {
-            print("test");
-            print(provider);
-            print(PalindromeProvider);
-            print((provider.palindromes));
             return const Center(child: CircularProgressIndicator());
           } else {
             return _buildPalindromeList(provider.palindromes);

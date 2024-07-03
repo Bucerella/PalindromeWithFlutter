@@ -15,7 +15,7 @@ class PalindromeProvider with ChangeNotifier {
 
   Future<void> fetchData() async {
     try {
-      String jsonString = await rootBundle.loadString("assets/data.json");
+      String jsonString = await rootBundle.loadString(Constants.str_dataJson);
       List<String> testStrings = jsonDecode(jsonString).cast<String>();
 
       _palindromes = testStrings.map((text) {
