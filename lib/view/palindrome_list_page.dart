@@ -30,11 +30,9 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
       ),
       body: Consumer<PalindromeProvider>(
         builder: (context, provider, _) {
-          if (provider.isLoading) {
-            return const Center(child: CircularProgressIndicator());
-          } else {
-            return _buildPalindromeList(provider.palindromes);
-          }
+          return provider.isLoading // Check if provider is loading (null-safe)
+              ? const Center(child: CircularProgressIndicator())
+              : _buildPalindromeList(provider.palindromes); // Access palindromes (null-safe)
         },
       ),
     );
