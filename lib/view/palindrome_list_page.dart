@@ -5,9 +5,14 @@ import 'package:palindrome_with_provider/model/palindrome.dart';
 import 'package:palindrome_with_provider/view_model/palindrome_provider.dart';
 import 'package:provider/provider.dart';
 
-class PalindromeListPage extends StatelessWidget {
+class PalindromeListPage extends StatefulWidget {
   const PalindromeListPage({super.key});
 
+  @override
+  State<PalindromeListPage> createState() => _PalindromeListPageState();
+}
+
+class _PalindromeListPageState extends State<PalindromeListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +25,8 @@ class PalindromeListPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.deepOrange.withOpacity(0.6),
+        backgroundColor: Colors.deepOrange.withOpacity(0.8),
+        elevation: 4,
       ),
       body: Consumer<PalindromeProvider>(
         builder: (context, provider, _) {
@@ -36,6 +42,11 @@ class PalindromeListPage extends StatelessWidget {
 
   Widget _buildPalindromeList(List<Palindrome> palindromes) {
     return ListView.builder(
+      padding: const EdgeInsets.symmetric(
+        vertical: 8.0,
+        horizontal: 16.0,
+      ),
+      physics: const BouncingScrollPhysics(),
       itemCount: palindromes.length,
       itemBuilder: (context, index) {
         final palindrome = palindromes[index];
@@ -62,7 +73,8 @@ class PalindromeListPage extends StatelessWidget {
               palindrome.text,
               style: GoogleFonts.abhayaLibre(
                 fontWeight: FontWeight.bold,
-                fontSize: 17,
+                fontSize: 18,
+                color: Colors.black87,
               ),
             ),
             subtitle: Column(
@@ -71,22 +83,25 @@ class PalindromeListPage extends StatelessWidget {
                 const SizedBox(height: 4.0),
                 Text(
                   '${Constants.str_purePalindrome}: ${palindrome.isPurePalindrome}',
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: backgroundColor,
                   ),
                 ),
                 const SizedBox(height: 4.0),
                 Text(
                   '${Constants.str_palindrome}: ${palindrome.isPalindrome}',
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: backgroundColor,
                   ),
                 ),
               ],
             ),
-            trailing: Icon(icon),
+            trailing: Icon(
+              icon,
+              color: backgroundColor,
+            ),
           ),
         );
       },
