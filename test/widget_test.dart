@@ -7,8 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:palindrome_with_provider/constants.dart';
-import 'package:palindrome_with_provider/palindrome_list_page.dart';
+import 'package:palindrome_with_provider/utilities/constants.dart';
+import 'package:palindrome_with_provider/view/palindrome_list_page.dart';
 
 
 void main() {

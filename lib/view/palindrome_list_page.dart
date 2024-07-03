@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:palindrome_with_provider/constants.dart';
-import 'package:palindrome_with_provider/palindrome.dart';
-import 'package:palindrome_with_provider/palindrome_provider.dart';
+import 'package:palindrome_with_provider/utilities/constants.dart';
+import 'package:palindrome_with_provider/model/palindrome.dart';
+import 'package:palindrome_with_provider/view_model/palindrome_provider.dart';
 import 'package:provider/provider.dart';
 
 class PalindromeListPage extends StatelessWidget {

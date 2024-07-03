@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:palindrome_with_provider/palindrome.dart';
+import 'package:palindrome_with_provider/model/palindrome.dart';
 
-import 'constants.dart';
+import '../utilities/constants.dart';
 
 
 class PalindromeProvider with ChangeNotifier {
