@@ -16,9 +16,10 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(
-          Constants.str_palindromeAndPure,
+          Constants.palindromeAndPure,
           style: GoogleFonts.roboto(
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -49,7 +50,7 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
       itemBuilder: (context, index) {
         final palindrome = palindromes[index];
         Color? backgroundColor;
-        IconData? icon;
+        late IconData icon;
 
         if (palindrome.isPurePalindrome && palindrome.isPalindrome) {
           backgroundColor = Colors.greenAccent;
@@ -63,7 +64,7 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
         }
 
         return Container(
-          key: const Key(Constants.str_mainContainerKey),
+          key: const Key(Constants.mainContainerKey),
           color: backgroundColor,
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
@@ -80,7 +81,7 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
               children: [
                 const SizedBox(height: 4.0),
                 Text(
-                  '${Constants.str_purePalindrome}: ${palindrome.isPurePalindrome}',
+                  '${Constants.purePalindrome}: ${palindrome.isPurePalindrome}',
                   style: const TextStyle(
                     fontSize: 14,
                     color: Colors.black,
@@ -88,7 +89,7 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
                 ),
                 const SizedBox(height: 4.0),
                 Text(
-                  '${Constants.str_palindrome}: ${palindrome.isPalindrome}',
+                  '${Constants.palindrome}: ${palindrome.isPalindrome}',
                   style: const TextStyle(
                     fontSize: 14,
                     color: Colors.black,

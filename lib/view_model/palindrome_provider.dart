@@ -5,7 +5,6 @@ import 'package:palindrome_with_provider/model/palindrome.dart';
 
 import '../utilities/constants.dart';
 
-
 class PalindromeProvider with ChangeNotifier {
   List<Palindrome> _palindromes = [];
   bool _isLoading = true;
@@ -13,13 +12,13 @@ class PalindromeProvider with ChangeNotifier {
   List<Palindrome> get palindromes => _palindromes;
   bool get isLoading => _isLoading;
 
-  PalindromeProvider(){
+  PalindromeProvider() {
     fetchData();
   }
 
   Future<void> fetchData() async {
     try {
-      String jsonString = await rootBundle.loadString(Constants.str_dataJson);
+      String jsonString = await rootBundle.loadString(Constants.dataJson);
       List<String> testStrings = jsonDecode(jsonString).cast<String>();
 
       _palindromes = testStrings.map((text) {
@@ -37,7 +36,7 @@ class PalindromeProvider with ChangeNotifier {
     } catch (e) {
       _isLoading = false;
       notifyListeners();
-      throw Exception('${Constants.str_failedPalindrome} $e');
+      throw Exception('${Constants.failedPalindrome} $e');
     }
   }
 
@@ -49,7 +48,7 @@ class PalindromeProvider with ChangeNotifier {
 
   bool _checkPalindrome(String text) {
     text = text.toLowerCase();
-    text = text.replaceAll(RegExp(r"[^\w]"), "");
+    text = text.replaceAll(RegExp(r"[\W]"), "");
     int length = text.length;
     for (int i = 0; i < length / 2; i++) {
       if (text[i] != text[length - i - 1]) {

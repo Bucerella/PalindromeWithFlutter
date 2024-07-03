@@ -14,10 +14,10 @@ import 'package:palindrome_with_provider/view/palindrome_list_page.dart';
 void main() {
   testWidgets('Check texts and key', (WidgetTester tester) async {
     await tester.pumpWidget(PalindromeListPage());
-    expect(find.byKey(const Key(Constants.str_mainContainerKey)), findsOneWidget);
+    expect(find.byKey(const Key(Constants.mainContainerKey)), findsOneWidget);
 
-    expect(find.text(Constants.str_palindromeAndPure), findsOneWidget);
-    expect(find.text(Constants.str_purePalindrome), findsOneWidget);
-    expect(find.text(Constants.str_palindrome), findsOneWidget);
+    expect(find.text(Constants.palindromeAndPure), findsOneWidget);
+    expect(find.text(Constants.purePalindrome), findsOneWidget);
+    expect(find.text(Constants.palindrome), findsOneWidget);
   });
 }
