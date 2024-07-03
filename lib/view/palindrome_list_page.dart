@@ -81,24 +81,24 @@ class _PalindromeListPageState extends State<PalindromeListPage> {
                 const SizedBox(height: 4.0),
                 Text(
                   '${Constants.str_purePalindrome}: ${palindrome.isPurePalindrome}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
-                    color: backgroundColor,
+                    color: Colors.black,
                   ),
                 ),
                 const SizedBox(height: 4.0),
                 Text(
                   '${Constants.str_palindrome}: ${palindrome.isPalindrome}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
-                    color: backgroundColor,
+                    color: Colors.black,
                   ),
                 ),
               ],
             ),
             trailing: Icon(
               icon,
-              color: backgroundColor,
+              color: Colors.black,
             ),
           ),
         );

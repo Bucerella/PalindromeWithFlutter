@@ -13,6 +13,10 @@ class PalindromeProvider with ChangeNotifier {
   List<Palindrome> get palindromes => _palindromes;
   bool get isLoading => _isLoading;
 
+  PalindromeProvider(){
+    fetchData();
+  }
+
   Future<void> fetchData() async {
     try {
       String jsonString = await rootBundle.loadString(Constants.str_dataJson);
